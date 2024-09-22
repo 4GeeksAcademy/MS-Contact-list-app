@@ -44,7 +44,7 @@ const AddContact = () => {
       <h1>{id ? "Edit Contact" : "Add New Contact"}</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="full_name" className="form-label">Full Name</label>
+          <label htmlFor="name" className="form-label">Full Name</label>
           <input
             type="text"
             className="form-control"

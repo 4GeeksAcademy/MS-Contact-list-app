@@ -4,6 +4,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 		contacts: [],
 	  },
 	  actions: {
+
+		createAgenda: ()=>{
+			fetch("https://playground.4geeks.com/contact/agendas/mona", {
+				method: "POST",
+				headers: {
+				  "Content-Type": "application/json",
+				},
+			  })
+				.then((resp) => resp.json())
+				.then((data) => setStore({ contacts: data }))
+				.catch((err) => console.error("Error fetching contacts:", err));
+			},
+	  
+		
 		// Fetch contacts from the API (GET)
 		getContacts: () => {
 		  fetch("https://playground.4geeks.com/contact/agendas/mona", {

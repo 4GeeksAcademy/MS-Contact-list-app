@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import ContactCard from "../component/ContactCard";
+import  ContactCard  from "../component/ContactCard";
 import { Link } from "react-router-dom";
 
 const ContactList = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
+    actions.createAgenda();
     actions.getContacts(); 
   }, []);
 
